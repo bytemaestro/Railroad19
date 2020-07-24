@@ -15,7 +15,7 @@ namespace DocumentService.WebAPI.Models.Validation
 
         }
         public string GetTitleError() =>
-         "Title is invalid: Title must contain a minimum of 5 characters and a maximum of 35, and each word should start with a capital letter.";
+         "Title is invalid: Title must contain a minimum of 5 characters and a maximum of 35, and each word should start with an uppercase letter";
         public string GetSizeError() =>
         "Size is invalid: Size must be greater than 0 MB and less than 500 MB";
 

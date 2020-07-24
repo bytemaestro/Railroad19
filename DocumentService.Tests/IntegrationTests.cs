@@ -28,9 +28,9 @@ namespace DocumentService.Tests
             var response0 = await Client.PostAsync($"/api/documents",
                 new StringContent(JsonConvert.SerializeObject(document), Encoding.UTF8, "application/json"));
             response0.StatusCode.Should().BeEquivalentTo(StatusCodes.Status400BadRequest);
-            //TODO: Get errors node from json. contains not working. out of time
-            //var responseMessage = JsonConvert.DeserializeObject<dynamic>(await response0.Content.ReadAsStringAsync());
-            //responseMessage.Errors.Contains(errorMessage).Should().BeTrue();
+          
+            var responseMessage = await response0.Content.ReadAsStringAsync();
+            responseMessage.ToString().Contains(errorMessage).Should().BeTrue();
         }
 
         [Fact]
